@@ -7,7 +7,7 @@ environment {
   Name = "test"
 }
 parameters {
-  booleanParam{defaultValue: true, description: 'checking boolean', name: 'Bool'}
+  booleanParam{defaultValue: true, name: 'Bool'}
   choice{choices: ['DEV', 'VAL', 'PROD', 'TRAIN'], name: 'Choose one Env'}
   string{defaultValue: 'abc', name: 'Tester'}
 }
@@ -24,7 +24,7 @@ stages {
         echo "name in stage is $Name1"
         echo "user name from parameter is ${params.Tester}"
         echo "env name from parameter is $Choose one Env"
-        echo "bool name from parameter is $Bool"
+        echo "bool name from parameter is ${params.Bool}"
     }
   }
 stage('Variable-demo2') {
@@ -32,9 +32,7 @@ stage('Variable-demo2') {
       // One or more stages need to be included within the stages block.
         echo "job is ${env.JOB_NAME} and build id is ${env.BUILD_ID}" 
         echo "name is $Name"
-        echo "user name from parameter is ${params.Tester}"
-        echo "env name from parameter is ${Choose one Env}"
-        echo "bool name from parameter is ${params.Bool}"
+        
     }
 }
 }
