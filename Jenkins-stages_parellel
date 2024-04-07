@@ -1,0 +1,29 @@
+pipeline {
+    agent {
+   label 'node11'
+}
+	stages {
+          stage('ParallelJobs'){
+            parallel{
+                  stage('Stage1A') {
+                      steps {
+                          echo "testing in progress"
+                    }
+                  }
+                   stage('Stage1B') {
+                      steps {
+                          echo "testing in progress"
+                    }
+                  }
+            }
+          }
+
+  stage('Deploy') {
+    steps {
+        echo "Deployed"
+    }
+  }
+ 
+}
+ 
+}
