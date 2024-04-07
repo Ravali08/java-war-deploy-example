@@ -32,6 +32,9 @@ stage('Variable-demo2') {
       // One or more stages need to be included within the stages block.
         echo "job is ${env.JOB_NAME} and build id is ${env.BUILD_ID}" 
         echo "name is $Name"
+        echo "user name from parameter is ${Tester}"
+        echo "env name from parameter is ${Env}"
+        echo "bool name from parameter is ${value}"
         
     }
 }
