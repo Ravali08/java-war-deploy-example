@@ -1,0 +1,19 @@
+pipeline{
+agent {
+label 'node11'
+}
+
+environment {
+  Name = "test"
+}
+
+stages {
+  stage('Variable-demo') {
+    steps {
+      // One or more stages need to be included within the stages block.
+        echo "job is ${env.JOB_NAME} and build id is ${env.BUILD_ID}" 
+        echo "name is $Name"
+    }
+  }
+}
+}
