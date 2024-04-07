@@ -7,9 +7,9 @@ environment {
   Name = "test"
 }
 parameters {
-  booleanParam defaultValue: true, description: 'checking boolean', name: 'Bool'
-  choice choices: ['DEV', 'VAL', 'PROD', 'TRAIN'], name: 'Choose one Env'
-  string defaultValue: 'abc', name: 'Tester'
+  booleanParam{defaultValue: true, description: 'checking boolean', name: 'Bool'}
+  choice{choices: ['DEV', 'VAL', 'PROD', 'TRAIN'], name: 'Choose one Env'}
+  string{defaultValue: 'abc', name: 'Tester'}
 }
 
 stages {
