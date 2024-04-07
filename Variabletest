@@ -7,7 +7,7 @@ environment {
   Name = "test"
 }
 parameters {
-  booleanParam{defaultValue: true, name: 'Bool'}
+   booleanParam defaultValue: true, name: 'value'
   choice{choices: ['DEV', 'VAL', 'PROD', 'TRAIN'], name: 'Choose one Env'}
   string{defaultValue: 'abc', name: 'Tester'}
 }
@@ -24,7 +24,7 @@ stages {
         echo "name in stage is $Name1"
         echo "user name from parameter is ${params.Tester}"
         echo "env name from parameter is $Choose one Env"
-        echo "bool name from parameter is ${params.Bool}"
+        echo "bool name from parameter is ${params.value}"
     }
   }
 stage('Variable-demo2') {
